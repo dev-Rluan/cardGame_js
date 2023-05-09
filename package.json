@@ -1,0 +1,23 @@
+{
+  "name": "cardgame",
+  "version": "1.0.0",
+  "description": "카드게임 개발을 위한 js",
+  "main": "cardGame.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev-Rluan/cardGame.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dev-Rluan/cardGame.js/issues"
+  },
+  "homepage": "https://github.com/dev-Rluan/cardGame.js#readme",
+  "devDependencies": {
+    "express": "^4.18.2"
+  }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../public/js/cardGame.js"></script>
+    <script>
+        const test1 = document.getElementById('tes1');
+        function selectCardHandle(){
+            console.log(getCardPack());
+        }
+        function selectCardHandle2(){
+            console.log(getCardByNum(0));
+        }
+    </script>
+</head>    
+<body>
+    <table>
+        <tr>
+            <td><button id="selectCard" onclick="javascript:selectCardHandle()">카드팩 전체 리스트</td>
+            <td><button id="selectCard2" onclick="javascript:selectCardHandle2()">카드팩 번호로 검색</td>
+        </tr>
+
+    </table>
+</body>
+</html>
