@@ -5,7 +5,6 @@
 // status = [u(UP: 위(숫자)), d(DOWN : 아래(뒷면))] 
 const cardPack =    [   
     {num : 1, emblem: "s", status : "u"},
-    {num : 1, emblem: "s", status : "u"},
     {num : 2, emblem: "s", status : "u"},
     {num : 3, emblem: "s", status : "u"},
     {num : 4, emblem: "s", status : "u"},
@@ -19,7 +18,6 @@ const cardPack =    [
     {num : 12, emblem: "s", status : "u"},
     {num : 13, emblem: "s", status : "u"},
 
-    {num : 1, emblem: "d", status : "u"},
     {num : 1, emblem: "d", status : "u"},
     {num : 2, emblem: "d", status : "u"},
     {num : 3, emblem: "d", status : "u"},
@@ -35,7 +33,6 @@ const cardPack =    [
     {num : 13, emblem: "d", status : "u"},
 
     {num : 1, emblem: "c", status : "u"},
-    {num : 1, emblem: "c", status : "u"},
     {num : 2, emblem: "c", status : "u"},
     {num : 3, emblem: "c", status : "u"},
     {num : 4, emblem: "c", status : "u"},
@@ -49,7 +46,6 @@ const cardPack =    [
     {num : 12, emblem: "c", status : "u"},
     {num : 13, emblem: "c", status : "u"},
 
-    {num : 1, emblem: "h", status : "u"},
     {num : 1, emblem: "h", status : "u"},
     {num : 2, emblem: "h", status : "u"},
     {num : 3, emblem: "h", status : "u"},
@@ -75,6 +71,16 @@ function getCardByNum(num){
     return cardPack[num];
 }
 
+function cardSuffle(){
+    shuffleArray(cardPack);
+}
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+} 
   
 

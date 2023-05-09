@@ -14,13 +14,17 @@
         function selectCardHandle2(){
             console.log(getCardByNum(0));
         }
+        function cardSuffleHandle(){
+            cardSuffle();
+        }
     </script>
 </head>    
 <body>
     <table>
         <tr>
-            <td><button id="selectCard" onclick="javascript:selectCardHandle()">카드팩 전체 리스트</td>
-            <td><button id="selectCard2" onclick="javascript:selectCardHandle2()">카드팩 번호로 검색</td>
+            <td><button id="cardBtn" onclick="javascript:selectCardHandle()">카드팩 전체 리스트</td>
+            <td><button id="cardBtn2" onclick="javascript:selectCardHandle2()">카드팩 번호로 검색</td>
+            <td><button id="cardBtn3" onclick="javascript:cardSuffleHandle()">카드셔플</td>
         </tr>
 
     </table>
