@@ -1,12 +1,12 @@
-let cardPack =  [];
+
 // 기본 트럼프 카드팩
 // 형식은 {num, emblem, status}
 // num : 1 = 1~13까지
 // emblem = [s(스페이드), d(다이아), c(클로버), h(하트)]
 // status = [u(UP: 위(숫자)), d(DOWN : 아래(뒷면))] 
 function setTrumpCardPack(){
-    cardPack = [];
-    cardPack = [   
+   
+    return [   
         {id : 0, num : 1, emblem: "s", status : "u"},
         {id : 1, num : 2, emblem: "s", status : "u"},
         {id : 2, num : 3, emblem: "s", status : "u"},
@@ -67,8 +67,8 @@ function setTrumpCardPack(){
 }
 // 할리갈리 카드팩
 function setTouchDownCardPack(){
-    cardPack = [];
-    cardPack = [   
+    
+    return  [   
         {id : 0, count : 1, emblem: "s", status : "u"},
         {id : 1, count : 1, emblem: "s", status : "u"},
         {id : 2, count : 1, emblem: "s", status : "u"},
@@ -133,26 +133,29 @@ function setTouchDownCardPack(){
     
 }
 
+function pullCard(cardPack, id ){
+    let card = cardPack.find(item => item.id = id);
 
-function getCardPack(){
-    return cardPack;
+    cardPack.splice()
+    
+    return card;
 }
 
-function getCardByNum(num){
+function getCardByNum(cardPack, num){
     return cardPack[num];
 }
 
-function cardSuffle(){
-    shuffleArray(cardPack);
+function cardSuffle(cardPack){
+    
     console.log("cardSuffle");
+    return shuffleArray(cardPack);
 }
 
-function divideSuffleCardTd(headCnt){
+function divideSuffleCardTd(cardPack, headCnt){
     console.log("divideSuffleCardTd in");
     if(headCnt < 2 || headCnt > 4){
         return;
     }
-
     cardSuffle();    
     let resultCards = [];
     console.log(headCnt);
@@ -174,9 +177,10 @@ function divideSuffleCardTd(headCnt){
         }
         resultCards.push(cardList);
     }
-    // console.log(resultCards);
+    
     return resultCards;
 }
+
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
