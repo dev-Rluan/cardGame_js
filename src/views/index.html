@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="../public/js/cardGame.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script>
         const test1 = document.getElementById('tes1');
         function selectCardHandle(){
@@ -50,8 +51,54 @@
             <td><button id="cardBtn4" onclick="javascript:setTbCardpackHandle()">할리갈리 카드팩으로 초기화</td>
             <td><button id="cardBtn5" onclick="javascript:divCardHandle()">카드팩 나누기 TD 기준</td>
             <td><button id="cardBtn6" onclick="javascript:checkCardSumTdHandle()">열린 카드 확인</td>
+
+
+
         </tr>
 
+
+
     </table>
+
+
+    <br><br><br><br><br>
+
+    <input type="file" accept="image/*" capture="camera" id="cameraInput">
+    <span id="imgSize">dddd</span>
+    <br>
+    <span id="filesize">dddd</span>
+    <br>
+    <span id="tdds">dddd</span>
+    <img id="previewImage" src="#" alt="Preview" style="display: none;">
 </body>
+<script>
+    $(document).ready(function() {
+  // input 요소에 변화가 생기면 실행될 함수
+  $("#cameraInput").change(function(event) {
+    var file = event.target.files[0]; // 선택된 파일 가져오기
+    var reader = new FileReader(); // FileReader 객체 생성
+
+    if(file != undefined){
+        $("#tdds").text("djkjkjlp;ij");
+    }
+    if(file.size < 10000000){
+        $("#filesize").text("ddddfsdfasfw2rfe");
+    }
+
+    
+    reader.onloadend = function(event) {
+      var fileSize = event.total; // 파일 크기 (바이트 단위)
+      var fileSizeKB = Math.round(fileSize / 1024); // 파일 크기 (킬로바이트 단위)
+      var fileSizeMB = (fileSize / (1024 * 1024)).toFixed(2); // 파일 크기 (메가바이트 단위, 소수점 2자리까지)
+        
+      $("#imgSize").text(fileSizeMB);
+      console.log("파일 크기: " + fileSize + " 바이트");
+      console.log("파일 크기: " + fileSizeKB + " KB");
+      console.log("파일 크기: " + fileSizeMB + " MB");
+    };
+
+    reader.readAsDataURL(file); // 파일을 데이터 URL로 읽기
+  });
+});
+</script>
 </html>

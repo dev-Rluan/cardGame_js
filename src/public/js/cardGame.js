@@ -69,23 +69,8 @@ function setTrumpCardPack(){
 function setTouchDownCardPack(){
     
     return  [   
-        {id : 0, count : 1, emblem: "s", status : "u"},
-        {id : 1, count : 1, emblem: "s", status : "u"},
-        {id : 2, count : 1, emblem: "s", status : "u"},
-        {id : 3, count : 1, emblem: "s", status : "u"},
-        {id : 4, count : 1, emblem: "s", status : "u"},
-        {id : 5, count : 2, emblem: "s", status : "u"},
-        {id : 6, count : 2, emblem: "s", status : "u"},
-        {id : 7, count : 2, emblem: "s", status : "u"},
-        {id : 8, count : 3, emblem: "s", status : "u"},
-        {id : 9, count : 3, emblem: "s", status : "u"},
-        {id : 10, count : 3, emblem: "s", status : "u"},
-        {id : 11, count : 4, emblem: "s", status : "u"},
-        {id : 12, count : 4, emblem: "s", status : "u"},
-        {id : 13, count : 5, emblem: "s", status : "u"},
-    
-        {id : 14, count : 1, emblem: "d", status : "u"},
-        {id : 15, count : 1, emblem: "d", status : "u"},
+        
+        
         {id : 16, count : 1, emblem: "d", status : "u"},
         {id : 17, count : 1, emblem: "d", status : "u"},
         {id : 18, count : 1, emblem: "d", status : "u"},
@@ -133,22 +118,33 @@ function setTouchDownCardPack(){
     
 }
 
+// 카드 뽑기
 function pullCard(cardPack, id ){
     let card = cardPack.find(item => item.id = id);
-
-    cardPack.splice()
-    
     return card;
+}
+
+// 카드 뽑고 리스트에 카드 지우기
+function removeCard(cardPack, id ){    
+    cardPack.splice(id)    
+    return cardPack;
 }
 
 function getCardByNum(cardPack, num){
     return cardPack[num];
 }
 
-function cardSuffle(cardPack){
-    
+function cardSuffle(cardPack){    
     console.log("cardSuffle");
     return shuffleArray(cardPack);
+}
+
+function upCardSum(upCardList){
+    let sum = 0;
+    for(let i =0; i < upCardList.length; i++){
+        sum += upCardList[i];
+    }
+    return sum;
 }
 
 function divideSuffleCardTd(cardPack, headCnt){
@@ -181,7 +177,7 @@ function divideSuffleCardTd(cardPack, headCnt){
     return resultCards;
 }
 
-
+// 카드 섞기
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -189,6 +185,7 @@ function shuffleArray(array) {
     }
     return array;
 } 
+
 
 function checkCardSumTd(cardList){
     let sum =0;
